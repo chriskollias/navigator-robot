@@ -34,7 +34,7 @@ class AStar:
                         (nx, ny) not in self.obstacles):
                     # Additional check for moving diagonally through obstacles
                     if dx != 0 and dy != 0:
-                        if (x + dx, y) in self.obstacles and (x, y + dy) in self.obstacles:
+                        if (x + dx, y) in self.obstacles or (x, y + dy) in self.obstacles:
                             continue  # Can't squeeze through diagonal gap
                     
                     neighbors.append((nx, ny))
